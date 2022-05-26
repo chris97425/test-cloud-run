@@ -36,6 +36,5 @@ def predict_vader(sentence):
     sid = SentimentIntensityAnalyzer()
     ss = sid.polarity_scores(sentence)
     ss["sentence"]= sentence
-    json_object = json.dumps(ss, indent = 4)
 
-    return json_object
+    return ss
