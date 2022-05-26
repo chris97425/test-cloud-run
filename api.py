@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-
+import json
 app = FastAPI()
 
 
@@ -33,4 +33,6 @@ def predict_vader(sentence):
     sid = SentimentIntensityAnalyzer()
     ss = sid.polarity_scores(sentence)
     ss["sentence"]= sentence
-    return ss
+    json_object = json.dumps(ss, indent = 4)
+
+    return json_object
