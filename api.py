@@ -2,6 +2,9 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import json
+import nltk
+nltk.download('vader_lexicon')
+
 app = FastAPI()
 
 
